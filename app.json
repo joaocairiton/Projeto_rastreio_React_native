@@ -4,11 +4,11 @@
     "slug": "Rastreio_Mercadoria",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/img/icon.png",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./assets/img/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#999"
     },
     "updates": {
       "fallbackToCacheTimeout": 0

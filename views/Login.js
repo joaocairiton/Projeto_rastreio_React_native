@@ -1,8 +1,10 @@
 import React, {useState, useEffect} from 'react';
 import { KeyboardAvoidingView, Platform, TextInput, TouchableOpacity, Image, Text, View} from 'react-native';
 import { css } from "../assets/css/Css";
+import AsyncStorage from '@react-native-community/async-storage';
 
-export default function Login({route})
+
+export default function Login({navigation})
 {
 
   const [display, setDisplay] = useState('none');
@@ -30,6 +32,11 @@ export default function Login({route})
           setTimeout(()=>{
               setDisplay('none');
           },5000);
+          await AsyncStorage.clear();
+      }else{
+        await AsyncStorage.setItem('userData', JSON.stringify(json));
+        navigation.navigate('AreaRestrita');
+
       }
   }
 

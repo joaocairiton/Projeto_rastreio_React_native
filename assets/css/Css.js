@@ -12,6 +12,11 @@ const css = StyleSheet.create({
     justifyContent: "center",
     backgroundColor: "#333",
   },
+  containerTop: {
+
+    justifyContent: 'flex-start'
+
+  },
 
 
   
@@ -93,6 +98,28 @@ area__tab:{
   fontSize: 20,
   fontWeight:"bold",
   color:"#333"
+},
+area__menu:{
+  flexDirection: 'row',
+  paddingTop: 40,
+  paddingBottom: 10,
+  width: '100%',
+  backgroundColor:'#111',
+  alignItems:'center',
+  justifyContent:'center'
+},
+button__home2:{
+  textAlign:'left'
+},
+area__title:{
+  width: '80%',
+  fontWeight:'bold',
+  fontSize:20,
+  color:'#fff',
+  textAlign:'center'
+},
+button__logout:{
+  textAlign:'right'
 }
   
 });

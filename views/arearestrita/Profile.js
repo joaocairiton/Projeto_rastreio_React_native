@@ -48,12 +48,12 @@ export default function Profile({navigation}) {
           <MenuAreaRestrita  title='Perfil' navigation={navigation} />
       <View style={[css.container]}>
           <View style={css.login__form}>
-              <Text>{msg}</Text>
+              <Text style={css.msg__p}>{msg}</Text>
               <TextInput style={css.login__input} placeholder='Senha Antiga:' onChangeText={text=>setSenhaAntiga(text)} />
               <TextInput style={css.login__input} placeholder='Nova Senha:' onChangeText={text=>setNovaSenha(text)} />
               <TextInput style={css.login__input} placeholder='Confirmação da Nova Senha:' onChangeText={text=>setConfNovaSenha(text)} />
               <TouchableOpacity style={css.login__button} onPress={()=>sendForm()}>
-                  <Text style={css.login__buttonText} >Mudar</Text>
+                  <Text style={css.login__buttonText} >Trocar </Text>
               </TouchableOpacity>
           </View>
           </View>

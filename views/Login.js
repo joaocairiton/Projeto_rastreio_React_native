@@ -92,7 +92,7 @@ async function sendForm()
         </View>
 
         <View>
-            <Text style={css.login__msg(display)}>Usuário ou senha inválidos!</Text>
+            <Text style={css.login__msg(display)}> Usuário ou senha inválidos!   </Text>
         </View>
 
         <View style={css.login__form}>

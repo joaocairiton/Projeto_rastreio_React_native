@@ -74,6 +74,12 @@ login__msg:(text = 'none') =>({
     display: text
 
 }),
+msg__p:{
+
+  color:"white",
+
+
+},
 
 
 

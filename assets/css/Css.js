@@ -2,17 +2,34 @@ import { StyleSheet } from "react-native";
 
 const css = StyleSheet.create({
   container: {
+    flex: 1,  
+    alignItems: "center",
+    justifyContent: "center",  
+  },
+  container_home: {
     flex: 1,
-    
     alignItems: "center",
     justifyContent: "center",
-   
-    
+    backgroundColor: "#333",
   },
+
+
+  
   textPage: {
     backgroundColor: "orange",
     padding: 20,
   },
+
+  bt_lg_home:{
+    padding: 12,
+    backgroundColor: "#F58634",
+    alignSelf:"center",
+    borderRadius:15,
+    width: "80%",
+    marginBottom: 30,
+
+  },
+  
   bt_login: {
     backgroundColor: "#999",
     textAlign: "center",
@@ -69,6 +86,13 @@ login__buttonText:{
   color:"#333",
   textAlign:"center"
   
+}, 
+area__tab:{
+
+  backgroundColor: "#333",
+  fontSize: 20,
+  fontWeight:"bold",
+  color:"#333"
 }
   
 });

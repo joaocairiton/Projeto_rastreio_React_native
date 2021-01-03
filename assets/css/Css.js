@@ -4,8 +4,20 @@ const css = StyleSheet.create({
   container: {
     flex: 1,  
     alignItems: "center",
-    justifyContent: "center",  
+    justifyContent: "center", 
+    backgroundColor: "#333",
+     
   },
+
+  container_perfil: {
+    flex: 1,  
+    alignItems: "center",
+    justifyContent: "center", 
+    backgroundColor: "#333",
+  },
+
+
+  
   container_home: {
     flex: 1,
     alignItems: "center",
@@ -81,7 +93,7 @@ login__button:{
   padding: 12,
   backgroundColor: "#F58634",
   alignSelf:"center",
-  borderRadius:15,
+  borderRadius:13,
   width: "80%"
   
 },

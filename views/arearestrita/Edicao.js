@@ -5,6 +5,8 @@ import MenuAreaRestrita from "../../assets/components/MenuAreaRestrita";
 import { BarCodeScanner } from 'expo-barcode-scanner';
 import {css} from '../../assets/css/Css'; 
 import config from '../../config/config';
+import * as Location from 'expo-location';
+import Geocoder from 'react-native-geocoding';
 
 export default function Edicao({navigation}) {
     const [hasPermission, setHasPermission] = useState(null);
@@ -22,6 +24,18 @@ export default function Edicao({navigation}) {
         })();
     }, []);
 
+    useEffect(()=>{
+
+        (async () => {
+            let { status } = await Location.requestPermissionsAsync();
+            if (status !== 'granted') {
+              setErrorMsg('Permission to access location was denied');
+              return;
+            }
+      
+            
+          })();
+    });
 
 
 
@@ -32,6 +46,7 @@ export default function Edicao({navigation}) {
         setDisplayQR('none');
         setDisplayForm('flex');
         setCode(data);
+        await getLocation();
         await searchProduct(data); 
     }
 
@@ -57,7 +72,33 @@ export default function Edicao({navigation}) {
     async function sendForm() {
 
     }
+    //Nova leitura do QRCode
+        async function readAgain()
+        {
+            setScanned(false);
+            setDisplayQR('flex');
+            setDisplayForm('none');
+            setCode(null);
+            setProduct(null);
+            setLocalization(null);
+        }
 
+
+
+
+
+    async function getLocation()
+{
+    let location = await Location.getCurrentPositionAsync({});
+    Geocoder.init(config.geocodingAPI);
+    Geocoder.from(location.coords.latitude, location.coords.longitude)
+		.then(json => {
+            let number = json.results[0].address_components[0].short_name;
+            let street = json.results[0].address_components[1].short_name;
+			setLocalization(`${street} - ${number}`);
+		})
+		.catch(error => console.warn(error));
+}
 
     return (
         <View >
@@ -90,6 +131,16 @@ export default function Edicao({navigation}) {
                 <TouchableOpacity style={css.login__button} onPress={()=>sendForm()}>
                     <Text>Atualizar</Text>
                 </TouchableOpacity>
+                {scanned &&
+                <View>
+                     <Button
+                        title='Escanear Novamente'
+                        onPress={()=>readAgain()}
+                        />
+                    </View>
+                  }
+
+
             </View>
         </View>
     );

@@ -20,6 +20,7 @@
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
-  "urlRoot": "http://192.168.15.9:3000/",
-  "origin": "Av. planicie, 10 - Goiania / GO"
+  "urlRoot": "http://192.168.15.8:3000/",
+  "origin": "Av. planicie, 10 - Goiania / GO",
+  "geocodingAPI": ""
 }
